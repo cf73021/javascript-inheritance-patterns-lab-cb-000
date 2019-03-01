@@ -54,8 +54,6 @@ this.sides = [new Side(s1), new Side(s2), new Side(s3)] ;
 }
 Triangle.prototype = Object.create(Polygon.prototype) ;
 Triangle.prototype.constructor = Polygon ;
-Triangle.prototype = Object.create(Polygon.prototype);
-Triangle.prototype.constructor = Polygon;
 
 function Rectangle(width, height) {
   this.width = width;
