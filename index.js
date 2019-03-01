@@ -50,3 +50,32 @@ function Quadrilateral(s1, s2, s3, s4) {
 }
 Triangle.prototype = Object.create(Polygon.prototype);
 Triangle.prototype.constructor = Polygon;
+
+function Rectangle(width, height) {
+  this.width = width;
+  this.height = height;
+  this.sides = [new Side(width), new Side(width), new Side(height), new Side(height)]
+}
+Rectangle.prototype = Object.create(Quadrilateral.prototype);
+Rectangle.prototype.constructor = Quadrilateral;
+Rectangle.prototype.area = function(){
+  return this.width * this.height;
+}
+
+function Square(length){
+  this.sides = [new Side(length), new Side(length), new Side(length), new Side(length)]
+  this.width = length;
+  this.height = length;
+}
+Square.prototype = Object.create(Rectangle.prototype);
+Square.prototype.constructor = Rectangle;
+Square prototype.listProperties = function(){
+  var sq = new Square(1);
+  var stuff = "";
+  for (var prop in sq){
+    if (sq.hasOwnProperty(prop)) {
+      stuff += prop;
+    }
+    return stuff;
+  }
+}
