@@ -17,7 +17,8 @@ Shape.prototype.move = function(x,y) {
 
 function Circle(radius){
   this.radius = radius
-  Shape.call(this, x, y)
+  this.diameter = function() {return this.radius * 2 ;}
+  this.area = function() {return this.radius**2 * Math.PI ;} 
 }
 
 function Polygon(){}
